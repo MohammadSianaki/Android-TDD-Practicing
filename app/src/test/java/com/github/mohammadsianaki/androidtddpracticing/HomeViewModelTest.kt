@@ -6,6 +6,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.github.mohammadsianaki.androidtddpracticing.db.AppDao
 import com.github.mohammadsianaki.androidtddpracticing.db.AppDatabase
 import io.mockk.spyk
+import io.mockk.verify
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,6 +33,15 @@ class HomeViewModelTest {
     @Test
     fun setup() {
         viewModel = HomeViewModel(HomeRepositoryImpl(appDao))
+    }
+
+
+    @Test
+    fun `save items calls database`() {
+        viewModel.saveItems(DataFactory.getItems())
+        verify {
+            appDao.saveAll(any())
+        }
     }
 
 }

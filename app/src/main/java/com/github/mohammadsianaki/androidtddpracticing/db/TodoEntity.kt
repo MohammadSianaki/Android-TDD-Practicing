@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "todos")
 data class TodoEntity(
     @PrimaryKey(autoGenerate = true)
-    private val id: Long = 0,
-    private val body: String
+    val id: Long = 0,
+    val body: String
 )

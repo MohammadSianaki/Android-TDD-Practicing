@@ -20,6 +20,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        saveBtn.setOnClickListener { viewModel.save(todos) }
+        saveBtn.setOnClickListener { viewModel.saveItems(todos) }
     }
 }

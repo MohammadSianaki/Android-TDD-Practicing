@@ -9,7 +9,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single<HomeRepository> { HomeRepositoryImpl() }
+    single<HomeRepository> { HomeRepositoryImpl(get()) }
     single {
         Room.databaseBuilder(
             get(),
